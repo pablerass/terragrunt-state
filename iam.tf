@@ -1,6 +1,6 @@
 resource "aws_iam_policy" "state_read" {
-  name        = "${var.prefix}-terraform-state-read"
-  description = "Read ${var.prefix} Terraform state bucket"
+  name        = "${var.name}-terraform-state-read"
+  description = "Read ${var.name} Terraform state"
 
   policy = <<EOF
 {
@@ -20,8 +20,8 @@ EOF
 }
 
 resource "aws_iam_policy" "state_write" {
-  name        = "terraform-state-write"
-  description = "Write ${var.prefix} Terraform state bucket"
+  name        = "${var.name}-terraform-state-write"
+  description = "Write ${var.name} Terraform state"
 
   policy = <<EOF
 {
